@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 @RequestMapping("/param")
 @RestController
 public class ParmController {
@@ -46,5 +49,28 @@ public class ParmController {
         }
         return a/b;
     }
+
+
+    @GetMapping("/tablice")
+    public String tablice(String[] strs){
+        StringBuilder sb = new StringBuilder();
+
+        for (int i=0; i < strs.length; ++i){
+            sb.append((strs[i]));
+            if(i != strs.length-1){
+                sb.append(";");
+            }
+        }
+        return sb.toString();
+    }
+
+    @GetMapping("/tablice2")
+    public String tablice2(@RequestParam String[] strs){
+        return Stream.of(strs)
+                .map(String::toUpperCase)
+                .collect(Collectors.joining(";"));
+    }
+
+
 
 }
