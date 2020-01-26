@@ -31,7 +31,7 @@ public class BodyController {
 
     @PostMapping(path = "/uprosc", consumes = "application/json")
     public String uprosc(@RequestBody User user){
-        return user.getName() + " " + user.getNazwisko() + " " + user.getWiek();
+        return user.getImie() + " " + user.getNazwisko() + " " + user.getWiek();
     }
 
 
