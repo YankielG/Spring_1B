@@ -1,4 +1,4 @@
-package Zjazd2.wszib.controller;
+package Zjazd2.wszib.controller_6;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +10,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 
-@RestController
+
 @RequestMapping("/image")
+@RestController
 public class ImageController {
 
     @GetMapping(produces = "image/jpg")
@@ -21,6 +22,5 @@ public class ImageController {
                 .getResourceAsStream("kot.jpg");
         return stream.readAllBytes();
     }
-
 
 }

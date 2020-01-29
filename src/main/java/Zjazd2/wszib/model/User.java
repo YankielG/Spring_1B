@@ -4,34 +4,46 @@ package Zjazd2.wszib.model;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class User {
+
     private String imie;
     private String nazwisko;
     private int wiek;
+
     private List<String> uprawnienia;
 
-
-    public User(String name, String nazwisko, int wiek) {
-        this.imie = name;
-        this.nazwisko = nazwisko;
-        this.wiek = wiek;
-        this.uprawnienia = new ArrayList<>();
-    }
-
-    public String getImie() {
-        return imie;
-    }
+//    private User zona;
 
     public List<String> getUprawnienia() {
         return uprawnienia;
     }
 
-    public void addUprawnienie(String uprawnienienie) {
-        this.uprawnienia.add(uprawnienienie);
+    public User(String imie, String nazwisko, int wiek) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.wiek = wiek;
+        this.uprawnienia = new ArrayList<>();
     }
 
-    public void removeUprawnienie(String uprawnienienie) {
-        this.uprawnienia.remove(uprawnienienie);
+    public void addUprawnienie(String uprawnienie) {
+        this.uprawnienia.add(uprawnienie);
+    }
+
+    public void removeUprawnienie(String uprawnienie) {
+        this.uprawnienia.remove(uprawnienie);
+    }
+
+//    public User getZona() {
+//        return zona;
+//    }
+
+//    public void setZona(User zona) {
+//        this.zona = zona;
+//    }
+
+    public String getImie() {
+        return imie;
     }
 
     public void setImie(String imie) {
@@ -54,3 +66,4 @@ public class User {
         this.wiek = wiek;
     }
 }
+
